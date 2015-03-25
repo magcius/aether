@@ -9,26 +9,63 @@
 <div class="toplevel">
 <div class="sidebar">
 <h1>AETHER</h1>
-<span id="sidebar-new-app">New App</span>
-<span id="sidebar-content">Content</span>
-<span id="sidebar-design">Design</span>
+<span class="stage-button" data-stage="new-app" id="sidebar-new-app">New App</span>
+<span class="stage-button" data-stage="content">Content</span>
+<span class="stage-button" data-stage="design">Design</span>
 </div>
 <div class="main">
+<div class="main-wrapper">
 
-<div class="stage stage-welcome active">
-<div class="welcome">
+<div class="stage stage-welcome" data-stage="welcome">
+<div class="tagline">
   Welcome to <b class="aether-editable">My App Name</b>.
 </div>
 </div>
 
-<div class="stage stage-content">
-Add content.
+
+
+<div class="stage stage-content" data-stage="content">
+<div class="tagline">
+  Manage and curate content for your application.
+</div>
+<div class="content-datagrid">
+</div>
 </div>
 
+
+
+<div class="stage stage-add-content" data-stage="add-content">
+<div class="tagline">
+  Curate the content for your application.
+</div>
+<div class="stage-button add-content-button wikipedia" data-stage="content-wikipedia"><div class="img"></div>Wikipedia</div>
+<div class="stage-button add-content-button wikihow"><div class="img"></div>WikiHow</div>
+<div class="stage-button add-content-button rss"><div class="img"></div>RSS Feed</div>
+<div class="stage-button add-content-button raw"><div class="img"></div>Raw Data</div>
+</div>
+
+
+
+<div class="stage stage-content-wikipedia active" data-stage="content-wikipedia">
+<div class="tagline">
+  Curate content from Wikipedia, the Free Encyclopedia.
+</div>
+<div class="big-search-wrapper">
+  <input class="big-search typeahead" placeholder="Search Wikipedia">
+  <div class="big-search-results"></div>
+</div>
+</div>
+
+
+
+</div>
 </div>
 </div>
 
 <script src="editable.js"></script>
+<script src="typeahead.js"></script>
+<script src="data/db.js"></script>
+
 <script src="mockup.js"></script>
 </body>
 </html>

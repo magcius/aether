@@ -10,12 +10,15 @@ html, body {
 }
 
 .toplevel {
-    display: table-row;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .sidebar {
-    display: table-cell;
+    position: absolute;
+    left: 0px;
+    width: 128px;
+    top: 0px;
+    bottom: 0px;
     background: #0C8EFF;
     color: white;
 }
@@ -25,6 +28,7 @@ html, body {
     display: block; width: 96px; text-align: center;
     padding: 16px;
     padding-bottom: 2em;
+    text-align: center;
 }
 .sidebar span {
     display: block;
@@ -38,21 +42,112 @@ html, body {
 }
 
 .main {
-    display: table-cell;
-    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 128px;
+    right: 0px;
+}
+.main-wrapper {
+    width: 80%;
+    margin: 0 auto;
 }
 
 .stage {
-    width: 100%;
     display: none;
 }
 .stage.active {
     display: block;
 }
 
-.stage-welcome .welcome {
+.stage .tagline {
     text-align: center;
     width: 100%;
     font-size: xx-large;
     line-height: 3em;
+}
+
+.add-content-button {
+    padding: .3em;
+
+    background: white;
+    border: 1px solid #999;
+    box-shadow: 0 0 4px #999;
+    margin: 5px;
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.add-content-button:hover {
+    box-shadow: 0 0 2px #666;
+    background: #eee;
+}
+
+.add-content-button .img {
+    width: 256px;
+    height: 128px;
+
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+}
+
+.add-content-button.wikipedia .img {
+    background-image: url(http://upload.wikimedia.org/wikipedia/commons/f/f6/Wikipedia-logo-v2-wordmark.svg);
+}
+.add-content-button.wikihow .img {
+    background-image: url(http://upload.wikimedia.org/wikipedia/commons/f/f4/WikiHow_logo_2014.png);
+}
+.add-content-button.rss .img {
+    background-image: url(http://upload.wikimedia.org/wikipedia/en/4/43/Feed-icon.svg);
+}
+.add-content-button.raw .img {
+    background-image: url(http://upload.wikimedia.org/wikipedia/commons/3/38/CsvDelimited001.svg);
+}
+
+.big-search-wrapper {
+    width: 100%;
+}
+.big-search {
+    font-size: x-large;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 4px;
+    width: 100%;
+}
+
+.big-search-results {
+    margin-top: .5em;
+}
+.big-search-result {
+    cursor: pointer;
+    font-size: x-large;
+    border: 1px solid #aaa;
+    border-bottom-style: none;
+    padding: 4px;
+    width: 100%;
+    background: white;
+    line-height: 1em;
+}
+.big-search-result:first-child {
+    border-radius: 4px 4px 0 0;
+}
+.big-search-result:last-child {
+    border-radius: 0 0 4px 4px;
+    border-bottom-style: solid;
+}
+.big-search-result:hover {
+    background-color: #eee;
+}
+
+.big-search-result-context, .big-search-result-context:after {
+    color: #aaa;
+    font-size: smaller;
+    float: right;
+}
+.big-search-result.category .big-search-result-context:after {
+    content: "Category";
 }
