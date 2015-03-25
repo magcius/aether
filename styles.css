@@ -1,0 +1,58 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+
+    font-size: 16pt;
+    font-family: "Helvetica Neue", "Helvetica", "Segoe UI", "Arial", sans-serif;
+
+    background: #ccc;
+}
+
+.toplevel {
+    display: table-row;
+    height: 100vh;
+}
+
+.sidebar {
+    display: table-cell;
+    background: #0C8EFF;
+    color: white;
+}
+.sidebar h1 {
+    font-size: 14pt;
+    margin: 0;
+    display: block; width: 96px; text-align: center;
+    padding: 16px;
+    padding-bottom: 2em;
+}
+.sidebar span {
+    display: block;
+    text-align: center;
+    line-height: 2em;
+    cursor: pointer;
+    width: 100%;
+}
+.sidebar span:hover {
+    background: #1E9FFF;
+}
+
+.main {
+    display: table-cell;
+    width: 100%;
+}
+
+.stage {
+    width: 100%;
+    display: none;
+}
+.stage.active {
+    display: block;
+}
+
+.stage-welcome .welcome {
+    text-align: center;
+    width: 100%;
+    font-size: xx-large;
+    line-height: 3em;
+}
